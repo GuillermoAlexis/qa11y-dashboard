@@ -21,7 +21,7 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 				<ol class="breadcrumb">
 					<li><a href="/">Dashboard</a></li>
 					{{#if isNewTaskPage}}
-						<li class="active">Add URL</li>
+						<li class="active">Agregar URL</li>
 					{{/if}}
 					{{#if isTaskPage}}
 					  <li class="active">{{task.name}}</li>
@@ -31,7 +31,7 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 					{{/if}}
 					{{#if isResultPage}}
 						<li><a href="{{task.href}}">{{task.name}}</a></li>
-						<li class="active">Results for {{date-format mainResult.date format="DD MMM YYYY"}}</li>
+						<li class="active">Resultados {{date-format mainResult.date format="DD MMM YYYY"}}</li>
 					{{/if}}
 				</ol>
 			</div>

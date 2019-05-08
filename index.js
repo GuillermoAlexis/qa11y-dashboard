@@ -41,7 +41,7 @@ require('./app')(config, (error, app) => {
 		console.error(chalk.grey(stack.join('\n')));
 	});
 
-	// Start the webservice if required
+	// Start the webservice if requiredd
 	
 	if (typeof config.webservice === 'object') {
 		require('pa11y-webservice')(config.webservice, (error, webservice) => {
