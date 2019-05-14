@@ -29,7 +29,7 @@ module.exports = initApp;
 function initApp(config, callback) {
 	config = defaultConfig(config);
 
-	let webserviceUrl = config.webservice;
+	let webserviceUrl = 'http://dokku.iie.cl:46814';
 	if (typeof webserviceUrl === 'object') {
 		webserviceUrl = `http://${webserviceUrl.host}:${webserviceUrl.port}/`;
 	}
