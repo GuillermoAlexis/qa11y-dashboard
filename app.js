@@ -31,7 +31,7 @@ function initApp(config, callback) {
 
 	let webserviceUrl = 'https://qa11y-webservice.dokku.iie.cl/';
 	if (typeof webserviceUrl === 'object') {
-		webserviceUrl = `http://${webserviceUrl.host}:${webserviceUrl.port}/`;
+		webserviceUrl = `https://qa11y-webservice.dokku.iie.cl/`;
 	}
 
 	const app = new EventEmitter();
