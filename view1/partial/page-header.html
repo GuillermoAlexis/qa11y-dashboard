@@ -1,4 +1,4 @@
-{{! 
+{{!
 This file is part of Pa11y Dashboard.
 
 Pa11y Dashboard is free software: you can redistribute it and/or modify
@@ -14,27 +14,13 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 }}
-{{#unless isHomePage}}
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<ol class="breadcrumb">
-					<li><a href="/">Dashboard</a></li>
-					{{#if isNewTaskPage}}
-						<li class="active">Agregar URL</li>
-					{{/if}}
-					{{#if isTaskPage}}
-					  <li class="active">{{task.name}}</li>
-					{{/if}}
-					{{#if isTaskSubPage}}
-						<li><a href="{{task.href}}">{{task.name}}</a></li>
-					{{/if}}
-					{{#if isResultPage}}
-						<li><a href="{{task.href}}">{{task.name}}</a></li>
-						<li class="active">Resultados {{date-format mainResult.date format="DD MMM YYYY"}}</li>
-					{{/if}}
-				</ol>
-			</div>
+<header>
+	<div role="banner" class="header">
+		<div class="container">
+			{{#if isHomePage}}<h1>{{else}}<div class="h1">{{/if}}
+				<a href="/">Pa11y Dashboard</a> -
+				<span class="h3">your automated accessibility testing pal</span>
+			{{#if isHomePage}}</h1>{{else}}</div>{{/if}}
 		</div>
 	</div>
-{{/unless}}
+</header>

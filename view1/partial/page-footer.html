@@ -1,4 +1,4 @@
-{{! 
+{{!
 This file is part of Pa11y Dashboard.
 
 Pa11y Dashboard is free software: you can redistribute it and/or modify
@@ -14,27 +14,28 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 }}
-{{#unless isHomePage}}
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<ol class="breadcrumb">
-					<li><a href="/">Dashboard</a></li>
-					{{#if isNewTaskPage}}
-						<li class="active">Agregar URL</li>
-					{{/if}}
-					{{#if isTaskPage}}
-					  <li class="active">{{task.name}}</li>
-					{{/if}}
-					{{#if isTaskSubPage}}
-						<li><a href="{{task.href}}">{{task.name}}</a></li>
-					{{/if}}
-					{{#if isResultPage}}
-						<li><a href="{{task.href}}">{{task.name}}</a></li>
-						<li class="active">Resultados {{date-format mainResult.date format="DD MMM YYYY"}}</li>
-					{{/if}}
-				</ol>
+<footer>
+	<div class="footer" role="contentinfo">
+		<div class="container">
+			<div class="col-md-5">
+				<small>&copy; 2013–{{year}} Team Pa11y.<br/>Pa11y Dashboard is licensed under the GNU General Public License 3.0.<br/>Version {{version}}</small>
+			</div>
+			<div class="col-md-7 clearfix">
+				<ul class="crunch-bottom floated-list nav">
+					<li>
+						<a href="{{repo}}">GitHub Repo</a>
+					</li>
+					<li>
+						<a href="{{bugtracker}}">Bug Tracker</a>
+					</li>
+					<li>
+						<a href="http://www.w3.org/TR/WCAG20/">WCAG 2.0 spec</a>
+					</li>
+					<li>
+						<a href="http://squizlabs.github.io/HTML_CodeSniffer/">HTML_CodeSniffer</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
-{{/unless}}
+</footer>

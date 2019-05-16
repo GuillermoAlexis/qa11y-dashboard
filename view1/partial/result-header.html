@@ -1,4 +1,4 @@
-{{! 
+{{!
 This file is part of Pa11y Dashboard.
 
 Pa11y Dashboard is free software: you can redistribute it and/or modify
@@ -14,27 +14,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 }}
-{{#unless isHomePage}}
-	<div class="container">
-		<div class="row">
+<div class="col-md-12">
+	<div class="ruled task-header">
+		<div class="row clearfix task-header">
 			<div class="col-md-12">
-				<ol class="breadcrumb">
-					<li><a href="/">Dashboard</a></li>
-					{{#if isNewTaskPage}}
-						<li class="active">Agregar URL</li>
-					{{/if}}
-					{{#if isTaskPage}}
-					  <li class="active">{{task.name}}</li>
-					{{/if}}
-					{{#if isTaskSubPage}}
-						<li><a href="{{task.href}}">{{task.name}}</a></li>
-					{{/if}}
-					{{#if isResultPage}}
-						<li><a href="{{task.href}}">{{task.name}}</a></li>
-						<li class="active">Resultados {{date-format mainResult.date format="DD MMM YYYY"}}</li>
-					{{/if}}
-				</ol>
+				<div class="h3 crunch well-med well pull-right"><span class="glyphicon glyphicon-calendar"></span>&nbsp;{{date-format mainResult.date format="DD MMM YYYY"}}</div>
+				<h1 class="h2 crunch-top">{{task.name}}</h1>
+				<p class="h4">{{simplify-url task.url}}<span class="h5"> ({{task.standard}})</span></p>
 			</div>
 		</div>
 	</div>
-{{/unless}}
+</div>
