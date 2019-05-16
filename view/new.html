@@ -22,13 +22,13 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 <form role="form" class="col-md-12" action="/new" method="post" data-test="new-url-form">
 
 	<div class="legend">
-		<h1 class="h2 crunch-top">Agregar Nueva URL</h1>
+		<h1 class="h2 crunch-top">Add a new URL</h1>
 	</div>
 
 	{{#error}}
 		<div class="col-md-12 clearfix" data-test="error">
 			<div class="alert alert-danger">
-				<strong>Ups!</strong>
+				<strong>Oh my gosh!</strong>
 				<p>{{.}}</p>
 			</div>
 		</div>
@@ -37,8 +37,8 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 	<div class="form-group clearfix">
 		<div class="row">
 			<div class="col-md-8 col-sm-8 col-xs-10">
-				<label class="control-label" for="new-task-name">Nombre</label>
-				<input class="form-control" id="new-task-name" type="text" required placeholder="Ej. My Home Page" name="name" value="{{task.name}}"/>
+				<label class="control-label" for="new-task-name">Name</label>
+				<input class="form-control" id="new-task-name" type="text" required placeholder="E.g. My Home Page" name="name" value="{{task.name}}"/>
 			</div>
 		</div>
 	</div>
@@ -47,7 +47,7 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 		<div class="row">
 			<div class="col-md-8 col-sm-8 col-xs-10">
 				<label class="control-label" for="new-task-url">URL</label>
-				<input class="form-control" id="new-task-url" type="url" required pattern="https?:\/\/.+" placeholder="Ej. http://mysite.com/" name="url" value="{{task.url}}"/>
+				<input class="form-control" id="new-task-url" type="url" required pattern="https?:\/\/.+" placeholder="E.g. http://mysite.com/" name="url" value="{{task.url}}"/>
 			</div>
 		</div>
 	</div>
@@ -68,8 +68,8 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 	<div class="form-group clearfix">
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-6">
-				<label class="control-label" for="new-task-timeout">Timeout (milisegundos)</label>
-				<input class="form-control" id="new-task-timeout" type="text" placeholder="Ej. 30000" name="timeout" value="{{task.timeout}}"/>
+				<label class="control-label" for="new-task-timeout">Timeout (milliseconds)</label>
+				<input class="form-control" id="new-task-timeout" type="text" placeholder="E.g. 30000" name="timeout" value="{{task.timeout}}"/>
 			</div>
 		</div>
 	</div>
@@ -77,13 +77,13 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 	<div class="form-group clearfix">
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-6">
-				<label class="control-label" for="new-task-wait">Tiempo de espera (milisegundos)</label>
-				<input class="form-control" id="new-task-wait" type="text" placeholder="Ej. 3000" name="wait" value="{{task.wait}}"/>
-				<em>(Nota: El tiempo de espera predeterminado es en 0ms)</em>
+				<label class="control-label" for="new-task-wait">Wait (milliseconds)</label>
+				<input class="form-control" id="new-task-wait" type="text" placeholder="E.g. 3000" name="wait" value="{{task.wait}}"/>
+				<em>(Note: default wait time is 0ms)</em>
 			</div>
 		</div>
 	</div>
-<!-- 
+
 	<div class="form-group clearfix">
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-6">
@@ -132,8 +132,8 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 				<input class="form-control" id="new-task-hide-elements" type="text" name="hideElements" value="{{task.hideElements}}" placeholder=".advert, #modal, div[aria-role=presentation]"/> <em>(CSS selector)</em>
 			</div>
 		</div>
-	</div> -->
-<!-- 
+	</div>
+
 	<p class="control-label"><b>Ignore these rules</b> <a target="_blank" href="https://github.com/pa11y/pa11y/wiki/HTML-CodeSniffer-Rules">(full list of rules here)</a></p>
 
 	<div class="standards-lists">
@@ -152,8 +152,8 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 				</ul>
 			</div>
 		{{/standards}}
-	</div> -->
+	</div>
 
-	<button type="submit" class="btn btn-success">Agregar URL <span class="glyphicon glyphicon-plus"></span></button>
+	<button type="submit" class="btn btn-success">Add URL <span class="glyphicon glyphicon-plus"></span></button>
 
 </form>

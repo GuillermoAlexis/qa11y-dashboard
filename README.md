@@ -158,4 +158,3 @@ Copyright &copy; 2013–2017, Team Pa11y
 [shield-node]: https://img.shields.io/badge/node.js%20support-4–6-brightgreen.svg
 [shield-version]: https://img.shields.io/badge/version-2.4.2-blue.svg
 [shield-build]: https://img.shields.io/travis/pa11y/pa11y-dashboard/master.svg
-# Qa11y

@@ -29,9 +29,9 @@ module.exports = initApp;
 function initApp(config, callback) {
 	config = defaultConfig(config);
 
-	let webserviceUrl = 'https://qa11y-webservice.dokku.iie.cl/';
+	let webserviceUrl = config.webservice;
 	if (typeof webserviceUrl === 'object') {
-		webserviceUrl = `https://qa11y-webservice.dokku.iie.cl/`;
+		webserviceUrl = `http://${webserviceUrl.host}:${webserviceUrl.port}/`;
 	}
 
 	const app = new EventEmitter();

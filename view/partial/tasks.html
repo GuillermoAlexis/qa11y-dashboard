@@ -20,7 +20,7 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 	{{#unless readonly}}
 	        <li class="col-md-4 col-sm-6 task-card add-task">
 			<a class="well task-card-link crunch-bottom" data-role="add-task" href="/new" data-test="add-task">
-				<p class="h3 crunch">Agregar Nueva URL</p>
+				<p class="h3 crunch">Add new URL</p>
 				<p class="supersize-me crunch">+</p>
 			</a>
 		</li>
@@ -33,12 +33,12 @@ along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 				{{#if lastResult}}
 				<ul class="clearfix list-unstyled floated-list task-stats">
 					{{#lastResult}}
-						<li class="danger" title="Number of errors ({{count.error}})">{{count.error}}<span class="stat-type">Errores</span></li>
-						<li class="warning" title="Number of warnings ({{count.warning}})">{{count.warning}}<span class="stat-type">Advertencias</span></li>
-						<li class="info last" title="Number of notices ({{count.notice}})">{{count.notice}}<span class="stat-type">Avisos</span></li>
+						<li class="danger" title="Number of errors ({{count.error}})">{{count.error}}<span class="stat-type">Errors</span></li>
+						<li class="warning" title="Number of warnings ({{count.warning}})">{{count.warning}}<span class="stat-type">Warnings</span></li>
+						<li class="info last" title="Number of notices ({{count.notice}})">{{count.notice}}<span class="stat-type">Notices</span></li>
 					{{/lastResult}}
 				</ul>
-				Última ejecución {{date-format lastResult.date format="DD MMM YYYY"}}
+				Last run {{date-format lastResult.date format="DD MMM YYYY"}}
 				{{else}}
 					<p class="no-results">No results</p>
 				{{/if}}

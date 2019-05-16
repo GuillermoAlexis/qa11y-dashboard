@@ -41,4 +41,21 @@ require('./app')(config, (error, app) => {
 		console.error(chalk.grey(stack.join('\n')));
 	});
 
+	// Start the webservice if required
+	if (typeof config.webservice === 'object') {
+		require('pa11y-webservice')(config.webservice, (error, webservice) => {
+			if (error) {
+				console.error(error.stack);
+				process.exit(1);
+			}
+
+			console.log('');
+			console.log(chalk.underline.cyan('Pa11y Webservice started'));
+			console.log(chalk.grey('mode:     %s'), process.env.NODE_ENV);
+			console.log(chalk.grey('uri:      %s'), webservice.server.info.uri);
+			console.log(chalk.grey('database: %s'), config.webservice.database);
+			console.log(chalk.grey('cron:     %s'), config.webservice.cron);
+		});
+	}
+
 });
