@@ -29,7 +29,7 @@ require('./app')(config, (error, app) => {
 	}
 
 	console.log('');
-	console.log(chalk.underline.magenta('Pa11y Dashboard started'));
+	console.log(chalk.underline.magenta('Qa11y Dashboard started'));
 	console.log(chalk.grey('mode: %s'), process.env.NODE_ENV);
 	console.log(chalk.grey('uri:  %s'), app.address);
 
