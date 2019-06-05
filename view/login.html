@@ -1,0 +1,43 @@
+{{!
+This file is part of Pa11y Dashboard.
+
+Pa11y Dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Pa11y Dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Pa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{#content "title"}}Qa11y Login{{/content}}
+
+<div data-control="task-list">
+  <div class="center-vertical" id="login">
+    <form class="card card-body bg-light" method="post">
+      <div class="h1">Qa11y</div>
+      <h6>Ingresa a tu cuenta</h6>
+      <div class="form-group">
+        <label>Usuario</label>
+        <input class="form-control" type="text" id="user-tf" name="user">
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input class="form-control" type="password" id="pass-tf" name="pass">
+      </div>
+      <div id="row1">
+        <button class="btn btn-light btn-left" type="button" id="btn_remember"><span class="fa fa-check-square"></span>Recordarme</button>
+        <button class="btn btn-primary" type="submit" id="btn_sign_in"><span class="fa fa-lock"></span>Iniciar sesión</button>
+      </div>
+      <hr>
+      <div class="btm-links">
+        <div id="forgot-password"><a href="#">¿Olvidaste tu cuenta?</a></div>
+        <div id="create-account"><a href="/signup">Crea una cuenta</a></div>
+      </div>
+    </form>
+  </div>
+</div>

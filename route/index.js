@@ -25,7 +25,7 @@ function route(app) {
 			if (error) {
 				return next(error);
 			}
-			response.render('index', {
+			response.render('login', {
 				tasks: tasks.map(presentTask),
 				deleted: (typeof request.query.deleted !== 'undefined'),
 				isHomePage: true

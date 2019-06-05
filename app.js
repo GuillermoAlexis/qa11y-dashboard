@@ -28,8 +28,10 @@ module.exports = initApp;
 // Initialise the application
 function initApp(config, callback) {
 	config = defaultConfig(config);
-
-	let webserviceUrl = 'https://qa11y-webservice.dokku.iie.cl/';
+	// produccion
+	// let webserviceUrl = 'https://qa11y-webservice.dokku.iie.cl/';
+	
+	let webserviceUrl = config.webservice;
 	if (typeof webserviceUrl === 'object') {
 		webserviceUrl = `http://${webserviceUrl.host}:${webserviceUrl.port}/`;
 	}
@@ -73,7 +75,7 @@ function initApp(config, callback) {
 
 	// Populate view locals
 	app.express.locals = {
-		lang: 'en',
+		lang: 'es',
 		year: (new Date()).getFullYear(),
 		version: pkg.version,
 		repo: pkg.homepage,
