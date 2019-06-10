@@ -11,24 +11,17 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+// along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>. 
+
 'use strict';
 
-const moment = require('moment');
+module.exports = route;
 
-module.exports = helper;
-
-function helper(hbs) {
-
-	// Format a date with Moment
-	hbs.registerHelper('date-format', (context, block) => {
-		const format = block.hash.format || 'YYYY-MM-DD HH:mm:ss';
-		return moment(context).format(format);
+// Route definition
+function route(app) {
+	app.express.get('/', (request, response, next) => {
+		response.render('login', {
+			isLoginPage: true,
+		});
 	});
-
-	// Get a relative date
-	hbs.registerHelper('date-relative', context => moment(context).fromNow());
-
-	hbs.registerHelper('date-timestamp', context => moment(context).valueOf());
-
 }
