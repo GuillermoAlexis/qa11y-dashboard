@@ -34,8 +34,8 @@ function initApp(config, callback) {
 	config = defaultConfig(config);
 	// produccion
 	let webserviceUrl = 'https://qa11y-webservice.dokku.iie.cl/';
-	
-	let webserviceUrl = config.webservice;
+	// local
+	// let webserviceUrl = config.webservice;
 	if (typeof webserviceUrl === 'object') {
 		webserviceUrl = `http://${webserviceUrl.host}:${webserviceUrl.port}/`;
 	}
