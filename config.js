@@ -26,6 +26,19 @@ if (fs.existsSync(jsonPath)) {
 	module.exports = require(jsPath);
 } else {
 	module.exports = {
+		// produccion
+		host: env('HOST', '0.0.0.0'),
+		port: Number(env('PORT', '8080')),
+		noindex: env('NOINDEX', 'true') === 'true',
+		readonly: env('READONLY', 'false') === 'true',
+
+		webservice: env('WEBSERVICE_URL', {
+			database: env('DATABASE', 'mongodb://qa11ywsbd:d3fc2581e25e6da12df3771cfa219c97@dokku-mongo-qa11ywsbd:27017/qa11ywsbd'),
+			host: env('HOST', '0.0.0.0'),
+			port: Number(env('PORT', '5000')),
+			cron: env('CRON', false)
+		})
+
 		// local
 		// port: Number(env('PORT', '8080')),
 		// noindex: env('NOINDEX', 'true') === 'true',
@@ -38,11 +51,6 @@ if (fs.existsSync(jsonPath)) {
 		// 	cron: env('WEBSERVICE_CRON', false)
 		// })
 
-		// produccion
-		host: env('HOST', '0.0.0.0'),
-		port: Number(env('PORT', '8080')),
-		noindex: env('NOINDEX', 'true') === 'true',
-		readonly: env('READONLY', 'false') === 'true',
 
 	};
 }
