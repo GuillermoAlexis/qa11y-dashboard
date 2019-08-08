@@ -12,6 +12,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+// Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
 'use strict';
 
 const fs = require('fs');
@@ -26,7 +27,7 @@ if (fs.existsSync(jsonPath)) {
 } else {
 	module.exports = {
 
-		port: Number(env('PORT', '4000')),
+		port: Number(env('PORT', '8080')),
 		noindex: env('NOINDEX', 'true') === 'true',
 		readonly: env('READONLY', 'false') === 'true',
 

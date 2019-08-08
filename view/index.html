@@ -13,6 +13,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
 }}
 
 {{#content "title"}}Qa11y Dashboard{{/content}}
@@ -24,7 +25,7 @@ along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
       <label for="task-filter" class="filter-trigger" data-toggle="collapse" data-target="#filter-input">Filtrar<span class="glyphicon glyphicon-filter"></span>
       </label>
       <div id="filter-input" class="collapse">
-        <input class="form-control" id="task-filter" type="text" data-role="input" placeholder="Type filter term (name or standard)"/>
+        <input class="form-control" id="task-filter" type="text" data-role="input" placeholder="Escribir algún nombre o standard"/>
       </div>
     </div>
   </div>
@@ -32,7 +33,7 @@ along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
   {{#if siteMessage}}
       <div class="col-md-12 clearfix" data-test="alert">
           <div class="alert alert-info site-message">
-              <h3 class="crunch-top"><span class="pull-left glyphicon glyphicon-exclamation-sign"></span> Important</h3>
+              <h3 class="crunch-top"><span class="pull-left glyphicon glyphicon-exclamation-sign"></span> Importante</h3>
               <p class="h5">{{siteMessage}}</p>
           </div>
       </div>
@@ -42,8 +43,8 @@ along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
       <div class="col-md-12 clearfix" data-test="alert">
           <div class="alert alert-info">
               <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-              <strong>Bye Bye URL</strong>
-              <p>The URL you selected and its associated results have been deleted.</p>
+              <strong>Adiós URL</strong>
+              <p>La URL que seleccionó y sus resultados asociados se han eliminados.</p>
           </div>
       </div>
   {{/deleted}}

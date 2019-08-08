@@ -1,18 +1,19 @@
 {{! 
-This file is part of Qa11y Dashboard.
+ This file is part of Qa11y Dashboard.
 
-Qa11y Dashboard is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+ Qa11y Dashboard is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-Qa11y Dashboard is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+ Qa11y Dashboard is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+ You should have received a copy of the GNU General Public License
+ along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+ Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
 }}
 
 <ul class="list-unstyled clearfix crunch-bottom">
@@ -20,37 +21,61 @@ along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
 	{{#unless readonly}}
 	        <li class="col-md-4 col-sm-6 task-card add-task">
 			<a class="well task-card-link crunch-bottom" data-role="add-task" href="/new" data-test="add-task">
-				<p class="h3 crunch">Agregar Nueva URL</p>
+				<p class="h3 crunch text-center">Agregar Nueva URL</p>
 				<p class="supersize-me crunch">+</p>
 			</a>
 		</li>
 	{{/unless}}
 	{{#each tasks}}
+
 		<li class="col-md-4 col-sm-6 task-card" data-test="task" data-role="task" data-keywords="{{lowercase name}} {{lowercase standard}} {{simplify-url url}}">
-			<a class="well task-card-link crunch-bottom" title="Details for URL {{simplify-url url}}" href="{{href}}">
+			<a class="well task-card-link crunch-bottom" title="Resultados para la URL {{simplify-url url}}" href="{{href}}">	
+				<p class="text-right" style="font-size: 10px; margin: 0 0 0 0">
+				{{#if lastResult}}
+				Última actualización {{date-format lastResult.date format="DD MMM YYYY"}}
+				{{else}}
+					Aún no hay resultados
+				{{/if}}
+				</p>
 				<p class="h3">{{name}}</p>
-				<p class="h5">({{standard}})</p>
+				<p class="h6">({{standard}})</p>
+
 				{{#if lastResult}}
 				<ul class="clearfix list-unstyled floated-list task-stats">
 					{{#lastResult}}
-						<li class="danger" title="Number of errors ({{count.error}})">{{count.error}}<span class="stat-type">Errores</span></li>
-						<li class="warning" title="Number of warnings ({{count.warning}})">{{count.warning}}<span class="stat-type">Advertencias</span></li>
-						<li class="info last" title="Number of notices ({{count.notice}})">{{count.notice}}<span class="stat-type">Avisos</span></li>
+						<li class="danger-number" title="Numero de Errores ({{count.error}})">{{count.error}}</li>
+						<li class="warning-number" title="Numero de Advertencias ({{count.warning}})">{{count.warning}}</li>
+						<li class="info-number last" title="Numero de Avisos ({{count.notice}})">{{count.notice}}</li>
 					{{/lastResult}}
 				</ul>
-				Última ejecución {{date-format lastResult.date format="DD MMM YYYY"}}
+				<ul class="clearfix list-unstyled floated-list task-stats">
+					{{#lastResult}}
+						<li class="danger" title="Numero de Errores ({{count.error}})"><span class="stat-type">Errores</span></li>
+						<li class="warning" title="Numero de Advertencias ({{count.warning}})"><span class="stat-type">Advertencias</span></li>
+						<li class="info last" title="Numero de Avisos ({{count.notice}})"><span class="stat-type">Avisos</span></li>
+					{{/lastResult}}
+				</ul>
 				{{else}}
-					<p class="no-results">No results</p>
+				<ul class="clearfix list-unstyled floated-list task-stats">
+						<li class="nothing-number" title="Numero de Errores ({{count.error}})">-</li>
+						<li class="nothing-number" title="Numero de Advertencias ({{count.warning}})">-</li>
+						<li class="nothing-number last" title="Numero de Avisos ({{count.notice}})">-</li>
+				</ul>
+				<ul class="clearfix list-unstyled floated-list task-stats">
+						<li class="nothing" title="Numero de Errores ({{count.error}})"><span class="stat-type">Errores</span></li>
+						<li class="nothing" title="Numero de Advertencias ({{count.warning}})"><span class="stat-type">Advertencias</span></li>
+						<li class="nothing last" title="Numero de Avisos ({{count.notice}})"><span class="stat-type">Avisos</span></li>
+				</ul>
 				{{/if}}
 			</a>
 			{{#unless ../readonly}}
 				<div class="btn-group options-button text-right">
-					<button type="button" class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown"><span class="sr-only">Options</span><span class="glyphicon glyphicon-cog"></span></button>
+					<button type="button" class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown"><span class="sr-only">Opciones</span><span class="glyphicon glyphicon-cog"></span></button>
 					<ul class="dropdown-menu pull-right" role="menu">
-						<li><a href="{{href}}/edit">Edit this task</a></li>
-						<li><a href="{{href}}/delete">Delete this task</a></li>
+						<li><a href="{{href}}/edit">Editar esta tarea</a></li>
+						<li><a href="{{href}}/delete">Borrar esta tarea</a></li>
 						<li class="divider"></li>
-						<li><a href="{{href}}/run" data-test="run-task">Run Pa11y</a></li>
+						<li><a href="{{href}}/run" data-test="run-task">Ejecutar análisis</a></li>
 					</ul>
 				</div>
 			{{/unless}}

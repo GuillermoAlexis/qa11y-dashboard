@@ -1,0 +1,78 @@
+{{! 
+This file is part of Qa11y Dashboard.
+
+Qa11y Dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Qa11y Dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{#content "title"}}Qa11y Signin{{/content}}
+
+{{#each errors}}
+  <div class="col-md-12 clearfix" data-test="alert">
+    <div class="alert alert-danger">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <strong>{{text}}</strong>
+    </div>
+  </div>
+{{/each}}
+{{#if error_msg }}
+  <div class="col-md-12 clearfix" data-test="alert">
+    <div class="alert alert-danger">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <strong>{{error_msg}}</strong>
+    </div>
+  </div>
+{{/if}}
+
+  {{#added}}
+  <div class="col-md-12 clearfix" data-test="alert">
+    <div class="alert alert-success">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <strong>Se ha podido registrar satisfactoriamente</strong>
+      <p>A continuación inicie sesión</p>
+    </div>
+  </div>
+{{/added}}
+
+<div class="row">
+  <div class="center-vertical" id="login">
+    <div class="card">
+      <div class="h1 text-center">Q A 1 1 Y</div>
+      &nbsp
+      <div class="card-header">
+        <div class="sub-login text-center">Registro</div>
+      </div>
+      &nbsp
+      <div class="card-body">
+        <form action="/signup" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Nombre" value="{{name}}">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email" value="{{email}}">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" value="{{password}}">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="confirmar_password" placeholder="Confirmar Password" value="{{confirmar_password}}">
+          </div>
+          <button class="btn btn-primary btn-left" type="submit" id="btn_sign_up"><span class="fa fa-lock"></span>Registrarse</button>
+          <a href="/">
+        <button class="btn btn-light" type="button" id="btn_remember"><span class="fa fa-check-square"></span>Volver</button>
+        </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

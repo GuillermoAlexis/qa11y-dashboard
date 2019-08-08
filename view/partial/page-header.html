@@ -1,27 +1,37 @@
 {{! 
-This file is part of Qa11y Dashboard.
+ This file is part of Qa11y Dashboard.
 
-Qa11y Dashboard is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+ Qa11y Dashboard is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-Qa11y Dashboard is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+ Qa11y Dashboard is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+ You should have received a copy of the GNU General Public License
+ along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+ Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
 }}
 <header>
 	{{#if isLoginPage}} {{else}}
 	<div role="banner" class="header">
 		<div class="container">
-			{{#if isHomePage}}<h1>{{else}}<div class="h1">{{/if}}
-				<a href="/">Qa11y</a> -
-				<span class="h3">Análisis y evaluación de contenido web</span>
-			{{#if isHomePage}}</h1>{{else}}</div>{{/if}}
+			<div class="row">
+			  	{{#if isHomePage}}<h3>{{else}}<h3>{{/if}}
+			  		<div class="col-md-10">	
+						<span class="banner">Qa11y </span>|
+						<span class="h4">Análisis y Evaluación de Contenido Web</span>
+					</div>
+					<div class="col-md-2">
+						<a href="/">
+						<button class="btn btn-primary" type="submit" id="btn_sign_in"><span class="fa fa-lock"></span>Salir</button>
+						</a>
+					</div>				 
+				{{#if isHomePage}}</h3>{{else}}</h3>{{/if}}			
+			</div>
 		</div>
 	</div>
 	{{/if}}

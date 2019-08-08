@@ -11,7 +11,8 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>. 
+// along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+// Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
 
 'use strict';
 

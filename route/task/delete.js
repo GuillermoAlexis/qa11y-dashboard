@@ -39,7 +39,7 @@ function route(app) {
 			if (error) {
 				return next();
 			}
-			response.redirect('/?deleted');
+			response.redirect('/index?deleted');
 		});
 	});
 

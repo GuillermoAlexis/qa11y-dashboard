@@ -15,14 +15,43 @@
 // Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
 
 'use strict';
-
+const getStandards = require('../data/standards');
+const httpHeaders = require('http-headers');
+const passport = require('passport');
+const wa= "hola";
 module.exports = route;
-
 // Route definition
 function route(app) {
+
 	app.express.get('/', (request, response, next) => {
-		response.render('login', {
-			isLoginPage: true,
+		response.render('users/signin', {
+		  isLoginPage: true,
 		});
 	});
-}
+
+	app.express.get('/:id/user', (request, response, next) => {
+		response.render('users/signin', {
+			isLoginPage: true,
+			added: (typeof request.query.added !== 'undefined'),
+		});
+	});
+
+	app.express.post('/', function(request,response,next){
+		app.webservice.users.get({lastres: true}, (error, users) => {
+			// console.log(users);
+			if (error) {
+				return next(error);
+			}
+		    request._toParam = users;
+
+		    passport.authenticate('login', {
+				session: false,	
+				successRedirect: '/index',
+				failureRedirect: '/',
+				failureFlash: true
+			})(request,response,next);
+		})
+	});
+ }
+
+

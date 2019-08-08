@@ -2,23 +2,18 @@
   "name": "pa11y-dashboard",
   "version": "2.4.2",
   "private": true,
-  "description": "Pa11y Dashboard is a visual web interface to the Pa11y accessibility reporter",
+  "description": "Qa11y Dashboard is a visual web interface to the Qa11y accessibility reporter",
   "keywords": [
     "accessibility",
     "analysis",
     "report"
   ],
-  "author": "Team Pa11y",
-  "contributors": [
-    "Perry Harlock (http://www.phwebs.co.uk/)",
-    "Rowan Manning (http://rowanmanning.com/)"
-  ],
+  "author": "Guillermo Alexis Lemunao Carrasco and Pa11y guys",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pa11y/dashboard.git"
+    "url": ""
   },
-  "homepage": "https://github.com/pa11y/dashboard",
-  "bugs": "https://github.com/pa11y/dashboard/issues",
+  "homepage": "",
   "license": "GPL-3.0",
   "engines": {
     "node": ">=8",
@@ -28,12 +23,19 @@
     "body-parser": "^1.18.3",
     "chalk": "~1.1",
     "compression": "^1.7.2",
-    "express-hbs": "~1.0",
+    "connect-flash": "^0.1.1",
     "express": "^4.16.3",
+    "express-hbs": "~1.0",
+    "express-session": "^1.16.2",
+    "generate-schema": "^2.6.0",
     "http-headers": "^3.0.1",
     "moment": "^2.22.2",
-    "pa11y-webservice-client-node": "^1.2.1",
+    "mongoose": "^5.6.1",
+    "mongoosify": "^1.0.0",
     "pa11y-webservice": "^2.3.1",
+    "pa11y-webservice-client-node": "^1.2.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "underscore": "~1.8"
   },
   "devDependencies": {
@@ -42,6 +44,7 @@
     "eslint": "^3.18.0",
     "less": "~2.7",
     "mocha": "^2",
+    "nodemon": "^1.19.1",
     "pa11y-lint-config": "^1.0.0",
     "proclaim": "^3",
     "request": "^2.74",
@@ -49,6 +52,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "make ci"
+    "test": "make ci",
+    "dev": "nodemon index.js"
   }
 }

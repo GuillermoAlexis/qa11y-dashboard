@@ -13,7 +13,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
-Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
 }}
 
 {{#content "title"}}Qa11y Login{{/content}}
@@ -24,30 +23,48 @@ Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
   <div class="col-md-12 clearfix" data-test="alert">
     <div class="alert alert-success">
       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-      <strong>Se ha podido registrar satisfactoriamente</strong>
+      <strong>Se ha registrado satisfactoriamente</strong>
       <p>A continuación inicie sesión</p>
     </div>
   </div>
 {{/added}}
+{{#if error }}
+  <div class="col-md-12 clearfix" data-test="alert">
+    <div class="alert alert-danger">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <!-- <strong>{{error}}</strong> -->
+      <p>Inicie sesión nuevamente</p>
+    </div>
+  </div>
+{{/if}}
+
 
   <div class="center-vertical" id="login">
-    <form class="card card-body bg-light" method="post">
-      <div class="h1">Qa11y</div>
-      <h6>Ingresa a tu cuenta</h6>
+    <form action="/" class="card card-body bg-light" method="post">
+      <div class="h1 text-center">Q A 1 1 Y</div>
+      &nbsp
+      <div class="card-header">
+        <div class="sub-login text-center">Inicio de Sesión</div>
+      </div>
+      &nbsp
       <div class="form-group">
         <label>Usuario</label>
         <input class="form-control" type="email" id="email-tf" name="email">
       </div>
       <div class="form-group">
         <label>Contraseña</label>
-        <input class="form-control" type="password" id="pass-tf" name="pass">
+        <input class="form-control" type="password" id="pass-tf" name="password">
       </div>
       <div id="row1">
-        <button class="btn btn-primary" type="submit" id="btn_sign_in"><span class="fa fa-lock"></span>Iniciar sesión</button>
+        <button class="btn btn-primary btn-left" type="submit" id="btn_sign_in"><span class="fa fa-lock"></span>Ingresar</button>
+        <a href="/signup">
+        <button class="btn btn-light" type="button" id="btn_remember" href="/signup"><span class="fa fa-check-square"></span>Registrarse</button>
+        </a>
       </div>
       <hr>
       <div class="btm-links">
-        <div id="create-account"><a href="/signup">Crea una cuenta</a></div>
+        <!-- <div id="forgot-password"><a href="#">¿Olvidaste tu cuenta?</a></div> -->
+<!--         <div id="create-account"><a href="/signup">Crea una cuenta</a></div> -->
       </div>
     </form>
   </div>

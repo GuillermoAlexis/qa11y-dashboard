@@ -12,6 +12,8 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Qa11y Dashboard.  If not, see <http://www.gnu.org/licenses/>.
+// Developed by Guillermo Alexis Lemunao Carrasco and Pa11y Guys
+
 'use strict';
 
 const bodyParser = require('body-parser');
@@ -22,7 +24,9 @@ const express = require('express');
 const hbs = require('express-hbs');
 const http = require('http');
 const pkg = require('./package.json');
-
+const flash = require('connect-flash');
+const passport = require('passport');
+const session = require('express-session');
 module.exports = initApp;
 
 // Initialise the application
@@ -85,15 +89,28 @@ function initApp(config, callback) {
 		siteMessage: config.siteMessage,
 		settings: {}
 	};
+	require('./config/passport');	
+	app.express.use(session({
+	  secret: 'secret',
+	  resave: true,
+	  saveUninitialized: true
+	}));
+	app.express.use(passport.initialize());
+	app.express.use(passport.session());
+	app.express.use(flash());
 
 	app.express.use((request, response, next) => {
 		response.locals.isHomePage = (request.path === '/index');
+		response.locals.success_msg = request.flash('success_msg');
+ 		response.locals.error_msg = request.flash('error_msg');
+		response.locals.error = request.flash('error');
 		response.locals.host = request.hostname;
 		next();
 	});
 
 	// Load routes
-	require('./route/login')(app);
+	require('./route/signin')(app);
+	require('./route/signup')(app);
 	require('./route/index')(app);
 	require('./route/task/index')(app);
 	require('./route/result/index')(app);

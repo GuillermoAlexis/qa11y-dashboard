@@ -453,14 +453,17 @@ cite {
 .text-center {
     text-align: center
 }
-
-h1,
+.h1,
+h1{ color: #44425A !important;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: Andale Mono, monospace
+    }
 h2,
 h3,
 h4,
 h5,
 h6,
-.h1,
 .h2,
 .h3,
 .h4,
@@ -517,7 +520,7 @@ h6 small {
 
 h1,
 .h1 {
-    font-size: 39px
+    font-size: 50px
 }
 
 h2,
@@ -2087,7 +2090,7 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
     color: #fff;
-    background-color: #2C3E50;
+    background-color: #44425A;
     border-color: #2C3E50
 }
 
@@ -6428,7 +6431,7 @@ input[type="color"]:focus,
 
 .supersize-me {
     text-align: center;
-    font-size: 112px;
+    font-size: 90px;
     line-height: 97px;
     font-weight: bold;
     color: #7C8C8D
@@ -6534,18 +6537,18 @@ input[type="color"]:focus,
 
 .danger,
 .error {
-    background-color: #D83D2D;
+    background-color: #EF0845;
     color: #fff
 }
 
 .warning {
-    background-color: #A86700;
+    background-color: #FED63D;
     color: #fff
 }
 
 .info,
 .notice {
-    background-color: #177BBE;
+    background-color: #46465C;
     color: #fff
 }
 
@@ -6561,7 +6564,7 @@ input[type="color"]:focus,
 
 .task-card .task-card-link {
     color: #616D6E;
-    min-height: 190px;
+    min-height: 200px;
     display: block;
     transition: background 0.5s;
     -webkit-transition: background 0.5s
@@ -6645,7 +6648,7 @@ input[type="color"]:focus,
 .category-list__item_type_error.active .category-list__link:hover,
 .category-list__item_type_error .category-list__link:focus,
 .category-list__item_type_error.active .category-list__link:focus {
-    color: #D83D2D
+    color: #EF0845
 }
 
 .category-list__item_type_warning .category-list__link,
@@ -6654,7 +6657,8 @@ input[type="color"]:focus,
 .category-list__item_type_warning.active .category-list__link:hover,
 .category-list__item_type_warning .category-list__link:focus,
 .category-list__item_type_warning.active .category-list__link:focus {
-    color: #A86700
+    color: #FED63D 
+
 }
 
 .category-list__item_type_notice .category-list__link,
@@ -6663,7 +6667,7 @@ input[type="color"]:focus,
 .category-list__item_type_notice.active .category-list__link:hover,
 .category-list__item_type_notice .category-list__link:focus,
 .category-list__item_type_notice.active .category-list__link:focus {
-    color: #177BBE
+    color: #46465C
 }
 
 .category-list__item_type_ignore .category-list__link,
@@ -7762,4 +7766,40 @@ ul.date-links {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+.input100 {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    background: 0 0;
+    padding: 0 5px;
+}
+.sub-login{ 
+    color: #44425A !important;
+    font-weight:lighter;
+    font-size: 30px;
+    }
+.banner{ color: #44425A !important;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Andale Mono, monospace
+    }
+.danger-number{
+    color: #EF0845 !important;
+}
+.warning-number{
+    color: #A86700 !important;
+}
+.info-number{
+    color: #46465C !important;
+}
+.nothing-number{
+    color: inherit !important;
+}
+.nothing{
+    background-color: inherit !important;
+    color: inherit !important;
 }
