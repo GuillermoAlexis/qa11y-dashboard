@@ -38,7 +38,7 @@ if (fs.existsSync(jsonPath)) {
 		// 	cron: env('WEBSERVICE_CRON', false)
 		// })
 
-		produccion
+		// produccion
 		host: env('HOST', '0.0.0.0'),
 		port: Number(env('PORT', '8080')),
 		noindex: env('NOINDEX', 'true') === 'true',
