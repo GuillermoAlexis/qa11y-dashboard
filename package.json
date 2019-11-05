@@ -30,7 +30,7 @@
     "generate-schema": "^2.6.0",
     "http-headers": "^3.0.1",
     "moment": "^2.22.2",
-    "mongoose": "^5.6.1",
+    "mongoose": "^5.7.5",
     "mongoosify": "^1.0.0",
     "pa11y-webservice": "^2.3.1",
     "pa11y-webservice-client-node": "^1.2.1",
