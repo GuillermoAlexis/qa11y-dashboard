@@ -36,7 +36,7 @@
     "pa11y-webservice-client-node": "^1.2.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "underscore": "~1.8"
+    "underscore": "~1.12"
   },
   "devDependencies": {
     "bower": "~1.7",
