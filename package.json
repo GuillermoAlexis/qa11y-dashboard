@@ -29,7 +29,7 @@
     "express-session": "^1.16.2",
     "generate-schema": "^2.6.0",
     "http-headers": "^3.0.1",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "mongoose": "^5.6.1",
     "mongoosify": "^1.0.0",
     "pa11y-webservice": "^2.3.1",
